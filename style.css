@@ -1,0 +1,71 @@
+#editor {
+    border: 1px solid red;
+    height: 1056px;
+    width:816px;
+    margin: 0 auto;
+    padding: 96px
+}
+#editor:focus {
+    outline: 0;
+}
+/* Header */
+.options {
+    color: rgba(0,0,0,.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 22px;
+    column-gap: 11px;
+    margin-bottom: 10px;
+    -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+.options > * {
+    padding: 3px 8px 2px 8px;
+    border-radius: 5px;
+}
+.options > *:hover {
+    background-color: rgb(234, 237, 240);
+}
+.breaker {
+    width: 1px;
+    height: 18px;
+    background-color: rgb(218, 220, 224);
+    padding: 0
+}
+/* Header Text style */
+.header-styles {
+    display: flex;
+    column-gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.style-options {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    margin-top:30px;
+    box-shadow: 0px 0px 5px 2px rgb(218, 220, 224);
+}
+.style-option {
+    border-bottom: 1px solid rgb(218, 220, 224);
+}
+.style-option>span {
+    padding: 25px 150px 25px 10px;
+    overflow: auto;
+    display: block;
+    white-space: nowrap;
+    width: max-content;
+    background-color: #fff;
+}
+.style-option>span:hover {
+    background-color: rgb(234, 237, 240);
+    width: auto;
+}
+/* Header Icons */
+.options > i {
+    font-size: 20px;
+    cursor: pointer;
+    display: inline-block;
+}

@@ -4,9 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
 </head>
 <body>
-    <div id="editor"></div>
+    <div class="options">
+        <i class="bi bi-arrow-counterclockwise"></i>
+        <i class="bi bi-arrow-clockwise"></i>
+        <i class="bi bi-printer-fill"></i>
+        <div class="breaker"></div>
+        <div class="header-styles">
+            <span class="active">Normal Text</span>
+            <i class="bi bi-caret-down-fill"></i>
+            <div class="style-options" data-expended="false">
+                <div class="style-option">
+                    <span>Normal Style</span>
+                </div>
+                <div class="style-option">
+                    <span>Title</span>
+                </div>
+                <div class="style-option">
+                    <span>Subtitle</span>
+                </div>
+            </div>           
+        </div>
+        <!-- Font -->
+        <!-- <div class="font-select">
+            <span>Arial</span>
+            <i class="bi bi-caret-down-fill"></i>
+        </div>  -->
+    </div>
+    <div id="editor" contenteditable=""></div>
     <script src="./pure.js"></script>
 </body>
 </html>
