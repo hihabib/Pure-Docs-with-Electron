@@ -1,11 +1,20 @@
-#editor {
-    border: 1px solid red;
-    height: 1056px;
-    width:816px;
-    margin: 0 auto;
-    padding: 96px
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+body {
+    background-color: #dadce0;
+    margin: 0;
+    padding: 0
 }
-#editor:focus {
+
+.editor {
+    height: 864px;
+    width:624px;
+    margin: 0 auto;
+    padding: 96px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 2px rgb(199, 199, 199);
+    margin-bottom: 20px;
+}
+.editor:focus {
     outline: 0;
 }
 /* Header */
@@ -17,9 +26,12 @@
     padding: 0 22px;
     column-gap: 11px;
     margin-bottom: 10px;
+    border: 1px solid rgb(173, 177, 180);
     -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  user-select: none; /* Standard syntax */;
+  background-color: #fff;
+  padding: 10px 0
 }
 .options > * {
     padding: 3px 8px 2px 8px;
@@ -64,8 +76,27 @@
     width: auto;
 }
 /* Header Icons */
+.text-color, .underline, .italic, .bold  {
+    font-family: 'Roboto Slab', serif;
+    margin-top: -5px;
+}
 .options > i {
     font-size: 20px;
     cursor: pointer;
     display: inline-block;
+}
+.bold {
+    font-weight: 700;
+}
+.italic {
+    font-style: italic;
+}
+.underline {
+    text-decoration: underline;
+}
+.text-color > div {
+    height: 3px;
+    width: 140%;
+    background-color: red;
+    margin-left: -20%
 }
