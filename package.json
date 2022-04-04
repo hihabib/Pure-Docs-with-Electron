@@ -17,11 +17,18 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4"
   },
-  "scripts": {
+ "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "lint": "echo \"No linting configured\""
   },
+  "author": {
+    "name": "Habibul Islam",
+    "email": "habibulislam6862@gmail.com"
+  },
+  "license": "MIT",
   "config": {
     "forge": {
       "packagerConfig": {},
@@ -29,7 +36,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": ""
+            "name": "pure_docs_with_electron"
           }
         },
         {
@@ -49,7 +56,9 @@
       ]
     }
   },
+  "productName": "pure-docs-with-electron",
   "name": "pure-docs-with-electron",
+  "description": "Pure Docs - a simple text editor for windows, linux and mac",
   "version": "1.0.0",
   "main": "index.js",
   "repository": {
@@ -57,11 +66,8 @@
     "url": "git+https://github.com/habibulislam6862/Pure-Docs-with-Electron.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/habibulislam6862/Pure-Docs-with-Electron/issues"
   },
-  "homepage": "https://github.com/habibulislam6862/Pure-Docs-with-Electron#readme",
-  "description": ""
+  "homepage": "https://github.com/habibulislam6862/Pure-Docs-with-Electron#readme"
 }
