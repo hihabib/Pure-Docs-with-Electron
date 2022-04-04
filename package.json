@@ -57,7 +57,7 @@
     }
   },
   "productName": "Pure Docs",
-  "name": "pure-docs-with-electron",
+  "name": "Pure Docs",
   "description": "Pure Docs - a simple text editor for windows, linux and mac",
   "version": "1.0.0",
   "main": "index.js",
