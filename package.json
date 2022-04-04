@@ -13,16 +13,18 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.63",
     "@electron-forge/maker-zip": "^6.0.0-beta.63",
     "electron": "18.0.1",
+    "electron-builder": "^22.14.13",
     "eslint": "^8.12.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4"
   },
- "scripts": {
+  "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "build": "electron-packager . app --platform linux --arch x64 --out dist/"
   },
   "author": {
     "name": "Habibul Islam",
@@ -56,8 +58,12 @@
       ]
     }
   },
+  "build": {
+    "appId": "puredocs",
+    "linux": {}
+  },
   "productName": "Pure Docs",
-  "name": "Pure Docs",
+  "name": "pure-docs",
   "description": "Pure Docs - a simple text editor for windows, linux and mac",
   "version": "1.0.0",
   "main": "index.js",

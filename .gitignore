@@ -1,2 +1,4 @@
 node_modules
-out/
+out
+dist
+Pure Docs-linux-x64
