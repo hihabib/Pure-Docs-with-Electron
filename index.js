@@ -34,6 +34,7 @@ const createMainWindow = () => {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+    icon: path.join(__dirname, 'src', 'img', 'icon.png'),
   });
 
   // show developer option if it is development mode
