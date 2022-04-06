@@ -1,4 +1,4 @@
-const { BrowserWindow, Menu } = require('electron');
+const { BrowserWindow, Menu, ipcMain } = require('electron');
 const windowStateKeeper = require('electron-window-state');
 const path = require('path');
 const isDev = require('electron-is-dev');
@@ -31,7 +31,11 @@ const createMainWindow = () => {
 
   Menu.setApplicationMenu(menu);
 
-  mainWindow.loadFile(path.join(__dirname, '..', 'src', 'index.html'));
+  ipcMain.handle('insert-table', (event, row, column) => {
+    console.log(row, column);
+  });
+  mainWindow.loadFile(path.join(__dirname, '..', 'src', 'window', 'index.html'));
+
   // Let us register listeners on the window, so we can update the state
   // automatically (the listeners will be removed when the window is closed)
   // and restore the maximized or full screen state

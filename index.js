@@ -1,6 +1,6 @@
 const { app } = require('electron');
-const tableWindow = require('./menu/insert/tableWindow');
 const { createMainWindow } = require('./windows/mainWindow');
+const tableWindow = require('./windows/tableWindow');
 
 app.whenReady().then(() => {
   const mainWindow = createMainWindow();
