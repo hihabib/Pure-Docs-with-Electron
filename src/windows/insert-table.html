@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/materialize.min.css">
     <style>
+        * {
+            -webkit-user-select: none;
+            /* Safari */
+            -ms-user-select: none;
+            /* IE 10 and IE 11 */
+            user-select: none;
+            /* Standard syntax */
+        }
+
         input[type=number]:not(.browser-default):focus:not([readonly]) {
             border-bottom: 1px solid #212121;
             -webkit-box-shadow: 0 1px 0 0 #212121;
@@ -16,6 +25,7 @@
         input[type=number]:not(.browser-default):focus:not([readonly])+label {
             color: #212121;
         }
+
         .container {
             padding: 15px;
             display: flex;
@@ -26,7 +36,9 @@
             margin-top: 10px;
             padding: 10px
         }
-        
+        button, .cancel {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -42,12 +54,14 @@
                 <label class="active" for="column">Column</label>
             </div>
             <button type="submit" class="btn waves-effect grey darken-3">Insert</button>
-            <a class="waves-effect cancel white light-blue-text text-accent-2">Cancel</a>
+            <span class="waves-effect cancel white light-blue-text text-accent-2">Cancel</span>
         </div>
     </form>
 
     <script src="../js/materialize.min.js"></script>
     <script>
+
+        // send data for creating table
         document.querySelector('form').addEventListener('submit', (event) => {
             event.preventDefault();
 
@@ -57,6 +71,12 @@
 
             // send data to main
             window.handleTable.insertTable(row, column);
+        })
+
+        // cancel insert
+        document.querySelector('.cancel').addEventListener('click', (event) => {
+            event.preventDefault();
+            window.handleTable.closeTable();
         })
     </script>
 </body>
