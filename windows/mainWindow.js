@@ -25,7 +25,7 @@ const createMainWindow = () => {
   });
   // show developer option if it is development mode
   if (isDev) {
-    // mainWindow.webContents.openDevTools();
+    mainWindow.webContents.openDevTools();
   }
   const menu = Menu.buildFromTemplate(getMenuItems(mainWindow));
 

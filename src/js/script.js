@@ -11,6 +11,27 @@ const editor = new FroalaEditor('#edit', {
   shortcutsEnabled: ['bold', 'italic', 'underline', 'indent', 'outdent', 'undo', 'redo', 'createLink'],
   fontFamilySelection: true,
   fontSizeSelection: true,
+  events: {
+    // eslint-disable-next-line func-names
+    'image.beforeUpload': function (files) {
+      const currentEditor = this;
+      if (files.length) {
+        // Create a File Reader.
+        const reader = new FileReader();
+        // Set the reader to insert images when they are loaded.
+        // eslint-disable-next-line func-names
+        reader.onload = function (e) {
+          const { result } = e.target;
+          currentEditor.image.insert(result, null, null, currentEditor.image.get());
+        };
+        // Read image as base64.
+        reader.readAsDataURL(files[0]);
+      }
+      currentEditor.popups.hideAll();
+      // Stop default upload chain.
+      return false;
+    },
+  },
   paragraphFormatSelection: true,
   lineHeights: {
     Default: '1',
