@@ -1,4 +1,4 @@
-const { BrowserWindow } = require('electron');
+const { BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 
@@ -14,10 +14,12 @@ const tableWindow = (parent) => {
       preload: path.join(__dirname, '..', 'preloads', 'tablePreloads.js'),
     },
   });
-
+  ipcMain.handle('test', () => {
+    table.close();
+  });
   table.loadFile(path.join(__dirname, '..', 'src', 'window', 'insert-table.html'));
   if (isDev) {
-    // table.webContents.openDevTools();
+    table.webContents.openDevTools();
   }
 };
 
