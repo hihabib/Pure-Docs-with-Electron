@@ -33,6 +33,7 @@ const createMainWindow = () => {
 
   ipcMain.handle('insert-table', (event, row, column) => {
     console.log(row, column);
+    event.sender.send('close');
   });
   mainWindow.loadFile(path.join(__dirname, '..', 'src', 'window', 'index.html'));
 
