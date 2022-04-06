@@ -4,7 +4,7 @@ const subMenuInsert = (mainWindow) => {
       label: 'Insert table',
       accelerator: process.platform === 'darwin' ? 'Cmd+Shift+T' : 'Ctrl+Shift+T',
       click: () => {
-        mainWindow.webContents.send('table');
+        mainWindow.webContents.send('show-table');
       },
     },
   ];

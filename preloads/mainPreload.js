@@ -7,3 +7,12 @@ contextBridge.exposeInMainWorld('handleFile', {
   print: (callback) => ipcRenderer.on('print-docs', callback),
   table: (callback) => ipcRenderer.on('table', callback),
 });
+
+contextBridge.exposeInMainWorld('handleTable', {
+  // send table data to renderer
+  tableData: (callback) => ipcRenderer.on('tableData', callback),
+});
+
+ipcRenderer.on('show-table', () => {
+  ipcRenderer.invoke('show-table');
+});

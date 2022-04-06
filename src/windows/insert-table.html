@@ -31,22 +31,33 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="input-field">
-            <input value="Alvin" id="row" type="number" class="validate ">
-            <label class="active" for="row">Row</label>
+    <form>
+        <div class="container">
+            <div class="input-field">
+                <input value="Alvin" id="row" type="number" class="validate ">
+                <label class="active" for="row">Row</label>
+            </div>
+            <div class="input-field">
+                <input value="Alvin" id="column" type="number" class="validate ">
+                <label class="active" for="column">Column</label>
+            </div>
+            <button type="submit" class="btn waves-effect grey darken-3">Insert</button>
+            <a class="waves-effect cancel white light-blue-text text-accent-2">Cancel</a>
         </div>
-        <div class="input-field">
-            <input value="Alvin" id="column" type="number" class="validate ">
-            <label class="active" for="column">Column</label>
-        </div>
-        <button class="btn waves-effect grey darken-3">Insert</button>
-        <a class="waves-effect cancel white light-blue-text text-accent-2">Cancel</a>
-    </div>
+    </form>
 
     <script src="../js/materialize.min.js"></script>
     <script>
+        document.querySelector('form').addEventListener('submit', (event) => {
+            event.preventDefault();
 
+            // get row and column value from form
+            const row = document.querySelector('#row').value;
+            const column = document.querySelector('#column').value;
+
+            // send data to main
+            window.handleTable.insertTable(row, column);
+        })
     </script>
 </body>
 

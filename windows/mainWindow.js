@@ -25,14 +25,16 @@ const createMainWindow = () => {
   });
   // show developer option if it is development mode
   if (isDev) {
-    mainWindow.webContents.openDevTools();
+    // mainWindow.webContents.openDevTools();
   }
   const menu = Menu.buildFromTemplate(getMenuItems(mainWindow));
 
   Menu.setApplicationMenu(menu);
 
   ipcMain.handle('insert-table', (event, row, column) => {
-    console.log(row, column);
+    const intRow = parseInt(row, 10);
+    const intColumn = parseInt(column, 10);
+    mainWindow.webContents.send('tableData', { intRow, intColumn });
     event.sender.send('close');
   });
   mainWindow.loadFile(path.join(__dirname, '..', 'src', 'windows', 'index.html'));
