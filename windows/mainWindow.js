@@ -36,6 +36,8 @@ const createMainWindow = () => {
   // automatically (the listeners will be removed when the window is closed)
   // and restore the maximized or full screen state
   mainWindowState.manage(mainWindow);
+
+  return mainWindow;
 };
 
 module.exports = { createMainWindow };
