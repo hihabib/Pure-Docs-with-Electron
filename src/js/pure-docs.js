@@ -9,3 +9,6 @@ window.handleFile.open((event, data) => {
   document.querySelector('.fr-element').innerHTML = data;
   placeholder.innerText = '';
 });
+window.handleFile.print(() => {
+  window.print();
+});

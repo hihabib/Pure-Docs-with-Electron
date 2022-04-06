@@ -1,23 +1,14 @@
-FroalaEditor.DefineIcon('alert', { NAME: 'info', SVG_KEY: 'help' });
-FroalaEditor.RegisterCommand('alert', {
-  title: 'Hello',
-  focus: false,
-  undo: false,
-  refreshAfterCallback: false,
-  callback() {
-    alert('Hello!');
-  },
-});
-
+// eslint-disable-next-line no-undef
 const editor = new FroalaEditor('#edit', {
   quickInsertTags: [],
   toolbarButtons: ['fontFamily',
     'fontSize', 'textColor', 'paragraphStyle', '|', 'bold', 'italic', 'underline',
-    'strikeThrough', 'subscript', 'superscript', 'lineHeight', '|', 'paragraphFormat',
+    'strikeThrough', 'subscript', 'superscript', 'lineHeight', 'createLink', '|', 'paragraphFormat',
     'align', 'formatOL', 'formatUL', 'outdent', 'indent', 'quote', '-', 'insertLink',
     'insertImage', 'insertVideo', 'insertFile', 'insertTable', '|', 'emoticons',
-    'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting', '|', 'print', 'help',
+    'specialCharacters', 'insertHR', 'selectAll', 'clearFormatting', '|', 'help',
     'html', '|', 'undo', 'redo', 'trackChanges', 'markdown'],
+  shortcutsEnabled: ['bold', 'italic', 'underline', 'indent', 'outdent', 'undo', 'redo', 'createLink'],
   fontFamilySelection: true,
   fontSizeSelection: true,
   paragraphFormatSelection: true,

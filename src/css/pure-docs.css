@@ -41,3 +41,17 @@ div#editor {
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
 }
+@media print {
+  body *:not([contenteditable="true"]) {
+   background-color: white;
+  }
+  .fr-toolbar {
+    display: none;
+  }
+  .fr-wrapper {
+    box-shadow: none;
+  }
+  .fr-second-toolbar {
+    visibility: hidden
+  }
+}
