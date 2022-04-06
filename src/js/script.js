@@ -23,3 +23,7 @@ const editor = new FroalaEditor('#edit', {
   editor.fullscreen.toggle();
   editor.lineHeight.apply();
 }));
+
+window.handleTable.tableData((event, { intRow, intColumn }) => {
+  editor.table.insert(intRow, intColumn);
+});
