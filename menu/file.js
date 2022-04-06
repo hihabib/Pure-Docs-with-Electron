@@ -14,6 +14,22 @@ const subMenuFile = (mainWindow) => {
   };
   const submenu = [
     {
+      label: 'Open file',
+      click: async () => {
+        const { filePaths } = await dialog.showOpenDialog(mainWindow, {
+          filters: [{ name: 'Pure Docs File', extensions: ['pure'] }],
+        });
+        fs.readFile(filePaths[0], { encoding: 'utf8' }, (error, data) => {
+          if (!error) {
+            const [filePath] = filePaths;
+            theFilePath = filePath;
+            mainWindow.webContents.send('open-file', data);
+          }
+        });
+      },
+      accelerator: process.platform === 'darwin' ? 'Cmd+O' : 'Ctrl+O',
+    },
+    {
       label: 'Save',
       click: async () => {
         if (theFilePath === '') {
@@ -46,22 +62,7 @@ const subMenuFile = (mainWindow) => {
       },
       accelerator: process.platform === 'darwin' ? 'Cmd+Shift+S' : 'Ctrl+Shift+S',
     },
-    {
-      label: 'Open file',
-      click: async () => {
-        const { filePaths } = await dialog.showOpenDialog(mainWindow, {
-          filters: [{ name: 'Pure Docs File', extensions: ['pure'] }],
-        });
-        fs.readFile(filePaths[0], { encoding: 'utf8' }, (error, data) => {
-          if (!error) {
-            const [filePath] = filePaths;
-            theFilePath = filePath;
-            mainWindow.webContents.send('open-file', data);
-          }
-        });
-      },
-      accelerator: process.platform === 'darwin' ? 'Cmd+O' : 'Ctrl+O',
-    },
+
     {
       label: 'Print current document',
       click: () => {
