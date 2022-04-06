@@ -35,7 +35,7 @@ const createMainWindow = () => {
     console.log(row, column);
     event.sender.send('close');
   });
-  mainWindow.loadFile(path.join(__dirname, '..', 'src', 'window', 'index.html'));
+  mainWindow.loadFile(path.join(__dirname, '..', 'src', 'windows', 'index.html'));
 
   // Let us register listeners on the window, so we can update the state
   // automatically (the listeners will be removed when the window is closed)
