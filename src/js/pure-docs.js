@@ -12,3 +12,6 @@ window.handleFile.open((event, data) => {
 window.handleFile.print(() => {
   window.print();
 });
+window.handleFile.table(() => {
+  // editor.toolbar.show();
+});

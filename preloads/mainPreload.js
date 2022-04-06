@@ -5,4 +5,5 @@ contextBridge.exposeInMainWorld('handleFile', {
   save: ipcRenderer.invoke,
   open: (callback) => ipcRenderer.on('open-file', callback),
   print: (callback) => ipcRenderer.on('print-docs', callback),
+  table: (callback) => ipcRenderer.on('table', callback),
 });
